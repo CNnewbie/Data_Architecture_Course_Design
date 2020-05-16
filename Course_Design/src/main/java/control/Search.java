@@ -43,7 +43,6 @@ public class Search extends Thread {
      * @Date: 2020/5/10
      */
     public static void search(String key) throws IOException {
-
         File[] root = File.listRoots();  // 获取系统中的所有盘符
         for (File file : root) {  // 全部盘符中搜索
             Search sr1 = new Search(file, key);
@@ -52,7 +51,7 @@ public class Search extends Thread {
     }
 
     /**
-     * @Description: 在树形存储结构下DFS
+     * @Description: 在树形存储结构下BFS
      * @Param: [dir, key]
      * @return: void
      * @Date: 2020/5/10
@@ -98,7 +97,6 @@ public class Search extends Thread {
     public static void main(String[] args) {  // test
         try {
             search("测试使用复杂名");
-            System.out.println("**********搜索结束********");
         } catch (IOException e) {
             e.printStackTrace();
         }
